@@ -1,0 +1,22 @@
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 1.2rem 2rem;
+  background: transparent;
+  transition: background 0.4s, box-shadow 0.4s;
+  &.scrolled { background: rgba(10,10,10,0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+}
+.nav-container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+.brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; letter-spacing: 2px; font-weight: 700;
+  span { color: #c9a85c; } }
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center;
+  li a { color: #f0f0f0; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: all 0.3s;
+    &:hover, &.active { color: #c9a85c; border-color: #c9a85c; } }
+}
+.hamburger { display: none; background: none; border: none; color: #c9a85c; font-size: 1.5rem; cursor: pointer; }
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(10,10,10,0.98); padding: 1rem 0; gap: 0;
+    li a { display: block; padding: 0.8rem 2rem; }
+    &.open { display: flex; }
+  }
+}

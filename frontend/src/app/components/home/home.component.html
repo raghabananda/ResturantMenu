@@ -1,0 +1,100 @@
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-sub">Welcome to</p>
+    <h1>The Taj <span>Dining</span></h1>
+    <p class="hero-desc">An Unforgettable Culinary Journey</p>
+    <div class="hero-btns">
+      <a routerLink="/reservations" class="btn-gold">Reserve a Table</a>
+      <a routerLink="/menu" class="btn-outline-gold">View Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- Welcome -->
+<section class="welcome-section">
+  <div class="container">
+    <p class="section-subtitle">Est. 1903</p>
+    <h2 class="section-title">A <span>Legacy</span> of Culinary Excellence</h2>
+    <div class="section-divider"><span>✦</span></div>
+    <p class="welcome-text">
+      Since 1903, The Taj Dining has been synonymous with exceptional cuisine, gracious hospitality, and timeless elegance.
+      Nestled in the heart of Mumbai, our restaurant offers an extraordinary dining experience that celebrates the rich flavors
+      of India and the world.
+    </p>
+  </div>
+</section>
+
+<!-- Chef Specials -->
+<section class="specials-section">
+  <div class="container">
+    <p class="section-subtitle">Featured</p>
+    <h2 class="section-title">Chef's <span>Specials</span></h2>
+    <div class="section-divider"><span>✦</span></div>
+    <div class="specials-grid">
+      <div class="special-card" *ngFor="let item of specials; let i = index">
+        <div class="card-img">
+          <img [src]="item.imageUrl || foodImages[i % foodImages.length]" [alt]="item.name" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400'">
+          <span class="badge">Chef's Special</span>
+        </div>
+        <div class="card-body">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+          <span class="price">${{ item.price | number:'1.2-2' }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:2rem">
+      <a routerLink="/menu" class="btn-outline-gold">View Full Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="story-section">
+  <div class="container story-grid">
+    <div class="story-text">
+      <p class="section-subtitle">Our Story</p>
+      <h2 class="section-title" style="text-align:left">A Tradition of <span>Excellence</span></h2>
+      <div class="section-divider" style="justify-content:flex-start"><span>✦</span></div>
+      <p>From the iconic Taj Mahal Palace overlooking the Arabian Sea, our culinary tradition spans over a century. Our chefs blend time-honored recipes with contemporary techniques, creating dishes that are as visually stunning as they are delicious.</p>
+      <p style="margin-top:1rem">Every ingredient is sourced with care, every dish prepared with passion, and every guest welcomed with warmth.</p>
+      <a routerLink="/about" class="btn-gold" style="display:inline-block;margin-top:1.5rem">Our Story</a>
+    </div>
+    <div class="story-stats">
+      <div class="stat"><h3>120+</h3><p>Years of Excellence</p></div>
+      <div class="stat"><h3>50+</h3><p>Signature Dishes</p></div>
+      <div class="stat"><h3>15</h3><p>Awards Won</p></div>
+      <div class="stat"><h3>5★</h3><p>Luxury Rating</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Teaser -->
+<section class="gallery-section">
+  <div class="container">
+    <p class="section-subtitle">Gallery</p>
+    <h2 class="section-title">A Feast for the <span>Eyes</span></h2>
+    <div class="section-divider"><span>✦</span></div>
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let img of foodImages">
+        <img [src]="img" alt="Gallery" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400'">
+        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:2rem">
+      <a routerLink="/gallery" class="btn-outline-gold">View Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reserve CTA -->
+<section class="cta-section">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2>Reserve Your Table Today</h2>
+    <p>Experience the finest dining in an atmosphere of unmatched elegance</p>
+    <a routerLink="/reservations" class="btn-gold">Make a Reservation</a>
+  </div>
+</section>
